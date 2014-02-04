@@ -2,7 +2,7 @@
 
 <html>
 <head>
-	<title>HCI Project Portfolio</title>	
+	<title>bottomsUp: My Cabinet</title>	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -19,16 +19,43 @@
 </head>
 
 <body>
-	<div class="container">
+	<div class="container fitWidth">
 		<!-- h1 through h6 are headers. The higher the number, the smaller the header -->
 		<!-- p means paragraph -->
 		<center><h1>My Cabinet</h1></center>
-		<form class="navbar-form navbar-left" role="search">
-	        <div class="form-group">
-	          <input type="text" class="form-control" placeholder="Search">
-	        </div>
+		<form class="fitWidth" role="search">
+	          <input type="text" class="form-control input-block-level" placeholder="Search Ingredients">
 	        <!-- <button type="submit" class="btn btn-default">Submit</button> -->
       </form>
+      <ul class="list-group">
+				  <li class="list-group-item">
+				    <a class="pull-left" href="#">
+				      <img class="listImage" src="http://www.liquorlockerla.com/wp-content/uploads/Bombay-Sapphire-Gin1.jpg">
+				    </a>
+				    <div class="media-body">
+				      <h1 class="media-heading">Gin</h1>
+				    </div>
+				  </li>
+				  <li class="list-group-item">
+				    <a class="pull-left" href="#">
+				      <img class="listImage" src="https://www.unionsquarewines.com/images/labels/absolut-vodka.gif">
+				    </a>
+				    <div class="media-body">
+				      <h1 class="media-heading">Vodka</h1>
+				    </div>
+				  </li>
+				  <li class="list-group-item">
+				    <a class="pull-left" href="#">
+				      <img class="listImage" src="http://www.charlietonic.com/wp-content/uploads/2012/06/cruzan-dark-rum-bottle-image.jpeg">
+				    </a>
+				    <div class="media-body">
+				      <h1 class="media-heading">Rum</h1>
+				    </div>
+				  </li>
+		</ul>
+		<br/>
+		<br/>
+		<a class="fitWidth" href="makeDrinks"><button class="btn btn-block btn-primary">Make Drinks</button></a>
 	</div>
 
 	<script src="https://code.jquery.com/jquery.js"></script>

@@ -2,7 +2,7 @@
 
 <html>
 <head>
-	<title>bottomsUp: Homepage</title>	
+	<title>bottomsUp: Make Drinks</title>	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -19,14 +19,31 @@
 </head>
 
 <body>
-	<div class="container">
+	<div class="container fitWidth">
 		<!-- h1 through h6 are headers. The higher the number, the smaller the header -->
 		<!-- p means paragraph -->
-		<div>
-			<img class="fitWidth" src="http://www.ru.nl/publish/pages/713224/alcohol.jpg">
-			<img class="fitWidth" src="http://i.imgur.com/omylSok.jpg">
-			<a class="fitWidth" href="cabinet"><button class="btn btn-block btn-primary">My Cabinet</button></a>
-		</div>
+		<center><h1>Make Drinks</h1>
+			<div class="btn-group">
+			  <button type="button" class="btn btn-default">Price</button>
+			  <button type="button" class="btn btn-default">One</button>
+			  <button type="button" class="btn btn-default">Two</button>
+			  <button type="button" class="btn btn-default">Three+</button>
+			</div>
+		</center>
+      	<ul class="list-group">
+				  <li class="list-group-item">
+				    <a class="pull-left" href="#">
+				      <img class="listImage" src="http://4.bp.blogspot.com/-lrDcOl7-rWg/TgTBSqz9hBI/AAAAAAAAAUI/JsNFjPf5L4E/s1600/long-island-iced-tea.jpg">
+				    </a>
+				    <div class="media-body">
+				      <h1 class="media-heading">Long Island Ice Tea</h1>
+				      <p>Also needs tequila.</p>
+				    </div>
+				  </li>
+		</ul>
+		<br/>
+		<br/>
+		<a class="fitWidth" href="makeDrinks"><button class="btn btn-block btn-primary">Make Drinks</button></a>
 	</div>
 
 	<script src="https://code.jquery.com/jquery.js"></script>
