@@ -1,4 +1,4 @@
-lab4
+bottomsUp
 ====
 
-Lab 4: Programming with Javascript
+Because life is too short for bad alcohol.

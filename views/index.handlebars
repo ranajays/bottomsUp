@@ -22,30 +22,11 @@
 	<div class="container">
 		<!-- h1 through h6 are headers. The higher the number, the smaller the header -->
 		<!-- p means paragraph -->
-		<div class="jumbotron">
-			<h1>Michael Bernstein</h1>
-			<p>human-computer interaction &middot; social computing &middot; crowdsourcing</p>
+		<div>
+			<img class="fitWidth" src="http://www.ru.nl/publish/pages/713224/alcohol.jpg">
+			<img class="fitWidth" src="http://i.imgur.com/omylSok.jpg">
+			<a class="fitWidth" href="cabinet"><button class="btn btn-block">My Cabinet</button></a>
 		</div>
-
-		<ol>
-	    {{#each projects}}
-	      <li><a href="project/{{name}}">{{name}}</a></li>
-	    {{/each}}
-	    </ol>
-
-
-		<h4>Projects</h4>
-		<!-- divs are invisible structuring elements that stack vertically by default. Use them to organize your code -->
-		<!-- img tags are images. Lorem Pixel will deliver random images; handy! -->
-		<!-- a are anchors, also known as hyperlinks. Use the href attribute to tell the browser where to go when the user clicks -->
-		{{#each projects}}
-		<div class="project" id="{{id}}">
-			<a href="project/{{name}}" class="thumbnail">
-				<img src="images/{{image}}" alt="Lorem Pixel image" class="img">
-				<p>{{name}}</p>
-			</a>
-		</div>
-		{{/each}}
 	</div>
 
 	<script src="https://code.jquery.com/jquery.js"></script>
