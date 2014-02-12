@@ -54,3 +54,39 @@
     margin-left: auto;
     margin-right: auto;*/
 }
+
+#custom-navbar {
+     background-color: #F0F0F0;
+     margin: 0 auto; 
+     text-align: center;
+     width: inherit;
+     display: inline-block;
+}
+
+#cabinet-tab {
+     display: inline-block;
+     text-align: center;
+     margin: auto;
+}
+
+#makedrinks-tab {
+     float: right;
+}
+
+
+
+
+.btn-group-wrap {
+    text-align: center;
+}
+
+div.btn-group {
+    margin: 0 auto; 
+    text-align: center;
+    width: inherit;
+    display: inline-block;
+}
+
+a {
+    float: left;   
+}
