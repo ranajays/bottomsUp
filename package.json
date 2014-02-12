@@ -16,7 +16,8 @@
     "express3-handlebars": "*",
     "mongodb": "*",
     "mongoose": "*",
-    "node-pre-gyp": "~0.4.1"
+    "node-pre-gyp": "~0.4.1",
+    "mongojs": "~0.10.0"
   },
   "engines": {
     "node": "0.10.x"

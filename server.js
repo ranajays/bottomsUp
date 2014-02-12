@@ -75,3 +75,19 @@ http.createServer(app).listen(app.get('port'), function(){
 // });
 // console.log(db)
 
+var mongodb = require('mongodb');
+var databaseUrl = "mydb"; // "username:password@example.com/mydb"
+var collections = ["drinks", "ingredients", "recipes"];
+var db = require("mongojs").connect(databaseUrl, collections);
+
+db.drinks.find(function(err,docs) {
+	console.log(docs);
+});
+
+db.ingredients.find(function(err,docs) {
+	console.log(docs);
+});
+
+db.recipes.find(function(err,docs) {
+	console.log(docs);
+});
