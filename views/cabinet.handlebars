@@ -54,30 +54,18 @@
       	</form>
 
       <ul class="list-group">
-				  <li class="list-group-item">
+      			{{#each this}}
+      			{{#if this.ingredient}}
+      			  <li class="list-group-item">
 				    <a class="pull-left" href="#">
-				      <img class="listImage" src="http://www.liquorlockerla.com/wp-content/uploads/Bombay-Sapphire-Gin1.jpg">
+				      <img class="listImage" src="{{this.image_url}}">
 				    </a>
 				    <div class="media-body">
-				      <h1 class="media-heading">Gin</h1>
+				      <h1 class="media-heading">{{this.ingredient}}</h1>
 				    </div>
 				  </li>
-				  <li class="list-group-item">
-				    <a class="pull-left" href="#">
-				      <img class="listImage" src="https://www.unionsquarewines.com/images/labels/absolut-vodka.gif">
-				    </a>
-				    <div class="media-body">
-				      <h1 class="media-heading">Vodka</h1>
-				    </div>
-				  </li>
-				  <li class="list-group-item">
-				    <a class="pull-left" href="#">
-				      <img class="listImage" src="http://www.charlietonic.com/wp-content/uploads/2012/06/cruzan-dark-rum-bottle-image.jpeg">
-				    </a>
-				    <div class="media-body">
-				      <h1 class="media-heading">Rum</h1>
-				    </div>
-				  </li>
+				 {{/if}}
+				 {{/each}}
 		</ul>
 		<br/>
 		<br/>
