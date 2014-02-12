@@ -6,7 +6,8 @@
 var express = require('express');
 var http = require('http');
 var path = require('path');
-var handlebars = require('express3-handlebars')
+var handlebars = require('express3-handlebars');
+// var fs = require('fs');
 
 var index = require('./routes/index');
 var cabinet = require('./routes/cabinet');
@@ -46,3 +47,31 @@ app.get('/makeDrinks', makeDrinks.view);
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
+
+// var file = "databases/current.db";
+// var exists = fs.existsSync(file);
+
+// if(!exists) {
+//   console.log("Creating DB file.");
+//   fs.openSync(file, "w");
+// }
+
+// var sqlite = require("node-sqlite-purejs");
+// var db = sqlite.open('./databases/test.db', {}, function(err,db) {
+// 	if (err) {
+// 		console.log(err);
+// 	}
+// 	else {
+// 		db.exec("SELECT * from Ingredients;", function(err,results){
+// 		if (err) {
+// 			console.log(err);
+// 		}
+// 		else {
+// 			console.log(results);
+// 		};
+// })
+// 	}
+
+// });
+// console.log(db)
+
