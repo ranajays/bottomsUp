@@ -45,13 +45,13 @@ app.get('/makeDrinks', makeDrinks.view);
 // app.get('/users', user.list);
 
 
-mongo = require('./initdb.js');
+// mongo = require('./initdb.js');
 
-mongo.init(function(error) {
-	if (error) {
-		throw error;
-	}
-});
+// mongo.init(function(error) {
+// 	if (error) {
+// 		throw error;
+// 	}
+// });
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

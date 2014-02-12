@@ -5,16 +5,15 @@
 
 exports.view = function(req, res){
 	var mongodb = require('mongodb');
-	var databaseUrl = "mydb"; // "username:password@example.com/mydb"
+	var databaseUrl = "ranajays:ranajays@troup.mongohq.com:10078/app21902449"; // "username:password@example.com/mydb"
 	var collections = ["drinks", "ingredients", "recipes"];
 	var db = require("mongojs").connect(databaseUrl, collections);
 	db.ingredients.find({}, {}, function(err,docs) {
-		console.log("error:" + err)
-		console.log(docs);
-		console.log(docs.length);
-		for (var i=0; i < docs.length; i++) {
-			console.log(docs[i].ingredient);
+		if (err) {
+			console.log("error:" + err);
 		}
-		res.render('cabinet', docs);
+		else {
+			res.render('cabinet', docs);
+		}
 	});
 };
