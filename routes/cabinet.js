@@ -13,7 +13,41 @@ exports.view = function(req, res){
 			console.log("error:" + err);
 		}
 		else {
-			res.render('cabinet', docs);
+			var names =[];
+			for (var i = 0; i < docs.length; i++) {
+				names.push(docs[i].ingredient)
+			}
+			res.render('cabinet', {
+				docs: docs,
+				data: JSON.stringify(names)});
 		}
 	});
+	// var $ = res.window.jQuery;
+	// var availableTags = [
+	// 				      "ActionScript",
+	// 				      "AppleScript",
+	// 				      "Asp",
+	// 				      "BASIC",
+	// 				      "C",
+	// 				      "C++",
+	// 				      "Clojure",
+	// 				      "COBOL",
+	// 				      "ColdFusion",
+	// 				      "Erlang",
+	// 				      "Fortran",
+	// 				      "Groovy",
+	// 				      "Haskell",
+	// 				      "Java",
+	// 				      "JavaScript",
+	// 				      "Lisp",
+	// 				      "Perl",
+	// 				      "PHP",
+	// 				      "Python",
+	// 				      "Ruby",
+	// 				      "Scala",
+	// 				      "Scheme"
+	// 				    ];
+ //    $( "#add_ingredient" ).autocomplete({
+ //      source: availableTags
+ //    });
 };

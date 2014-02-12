@@ -9,6 +9,8 @@
 	<!-- <link href="/css/bootstrap-theme.min.css" rel="stylesheet"> -->
 	<link href="/css/introHCI.css" rel="stylesheet">
 	<link href="/css/flat-ui.css" rel="stylesheet">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+
 	<!-- this is a comment in HTML -->
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -50,12 +52,12 @@
 		<!-- <center><h1>My Cabinet</h1></center> -->
 		<form class="fitWidth" role="search">
 			  <h6>Add ingredients...</h6>
-	          <input type="text" class="form-control input-block-level" placeholder="Search Ingredients">
+	          <input type="text" id="add_ingredient" class="form-control input-block-level" placeholder="Search Ingredients">
 	        <!-- <button type="submit" class="btn btn-default">Submit</button> -->
       	</form>
 
       <ul class="list-group">
-      			{{#each this}}
+      			{{#each docs}}
       			{{#if this.ingredient}}
       			  <li class="list-group-item">
 				    <a class="pull-left" href="#">
@@ -73,9 +75,17 @@
 		<a class="fitWidth" href="makeDrinks"><button class="btn btn-block btn btn-info">Make Drinks</button></a>
 		</br>
 	</div>
-
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/introHCI.js"></script>
+	<script src="//code.jquery.com/jquery-1.9.1.js"></script>
+  	<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  	<script type="text/javascript">
+  		var availableTags = JSON.parse('{{data}}'.replace(/&quot;/g,'"'));
+  		console.log(availableTags);
+    $( "#add_ingredient" ).autocomplete({
+      source: availableTags
+    });
+  	</script>
 </body>
 </html>
