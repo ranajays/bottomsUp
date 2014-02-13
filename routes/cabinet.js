@@ -8,7 +8,6 @@ exports.view = function(req, res){
 	var databaseUrl = "ranajays:ranajays@troup.mongohq.com:10078/app21902449"; // "username:password@example.com/mydb"
 	var collections = ["drinks", "ingredients", "recipes", "cabinets"];
 	var db = require("mongojs").connect(databaseUrl, collections);
-	console.log(req.query);
 	if (req.query['add_ingredient']) {
 		db.cabinets.ensureIndex({"user_id": true, "ingredient_id": true}, {unique: true});
 		db.cabinets.save({user_id: 1, ingredient_id: req.query["add_ingredient"]});
