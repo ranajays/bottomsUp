@@ -44,15 +44,15 @@ exports.view = function(req, res){
 			  					var price = 0;
 			  					var rem_ing = [];
 			  					for (var j = 0; j < additional; j++) {
-			  						price += 1;
-			  						// price += ingredients[(remainders[i]['remainder'])[j]]['price']
+			  						// price += 1;
+			  						price += ingredients[(remainders[i]['remainder'])[j]]['price']
 			  						rem_ing.push(ingredients[(remainders[i]['remainder'])[j]]['ingredient']);
 			  					}
-								drinklist.push({drink_id: remainders[i].drink_id, drink_name: drinks[remainders[i].drink_id].drink, image_url: drinks[remainders[i].drink_id].image_url, remainder:rem_ing, price:price});
-			  					console.log(drinklist);
+								drinklist.push({drink_id: remainders[i].drink_id, drink_name: drinks[remainders[i].drink_id].drink, image_url: drinks[remainders[i].drink_id].image_url, remainder:rem_ing, price:price.toFixed(2)});
 			  				}
 			  			}
-			  			res.render('makeDrinks', drinklist);
+						console.log(drinklist);
+			  			res.render('makeDrinks', {price: drinklist.sort(dynamicSort("price")), name:drinklist.slice(0).sort(dynamicSort("drink_name"))});
 		  			});
 	  			});
 	  			
@@ -61,3 +61,17 @@ exports.view = function(req, res){
 	});
 };
 
+
+//Sort function pulled from StackOverflow
+//http://stackoverflow.com/questions/1129216/sorting-objects-in-an-array-by-a-field-value-in-javascript
+function dynamicSort(property) {
+    var sortOrder = 1;
+    if(property[0] === "-") {
+        sortOrder = -1;
+        property = property.substr(1);
+    }
+    return function (a,b) {
+        var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
+        return result * sortOrder;
+    }
+}

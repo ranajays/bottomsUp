@@ -46,10 +46,10 @@
 	</div>
 
 	<div class="wrapper">
-		<p id="price-title">Price: </p>
+		<p id="price-title">Sort Mode </p>
 		<div class="switch has-switch" id="priceSwitch">
 			<!-- <div class="switch-animate switch-off"> -->
-			<input type="checkbox" checked data-toggle="switch">
+			<input type="checkbox" id="sort_switch" checked data-toggle="switch">
 			<!-- </div> -->
 		</div>
 	</div>
@@ -67,8 +67,8 @@
 			<button class="btn btn-default navbar-btn" type="button">+3 ingredients</button>
 		</div> -->
 		</center>
-      	<ul class="list-group">
-  			{{#each this}}
+      	<ul class="list-group" id="priceSortList">
+  			{{#each this.price}}
   			{{#if this.drink_name}}
       		<a href="recipe" class="drinks">
 				  <li class="list-group-item">
@@ -76,7 +76,24 @@
 				      <img class="listImage" src="{{this.image_url}}">
 				    </a>
 				    <div class="media-body">
-				      <h5 class="media-heading">{{this.drink_name}} - ${{this.price}}</h5>
+				      <h5 class="media-heading">{{this.drink_name}} - ${{this.price}}/drink</h5>
+				      <p>If you get {{#each this.remainder}} {{this}}, {{/each}} you can make this drink!</p>
+				    </div>
+				  </li>
+			</a>
+			{{/if}}
+			{{/each}}
+		</ul>
+		<ul class="list-group" id="nameSortList">
+  			{{#each this.name}}
+  			{{#if this.drink_name}}
+      		<a href="recipe" class="drinks">
+				  <li class="list-group-item">
+				    <a class="pull-left" href="recipe?id={{this.drink_id}}">
+				      <img class="listImage" src="{{this.image_url}}">
+				    </a>
+				    <div class="media-body">
+				      <h5 class="media-heading">{{this.drink_name}} - ${{this.price}}/drink</h5>
 				      <p>If you get {{#each this.remainder}} {{this}}, {{/each}} you can make this drink!</p>
 				    </div>
 				  </li>
@@ -102,5 +119,23 @@
     <script src="js/flatui-radio.js"></script>
     <script src="js/jquery.tagsinput.js"></script>
     <script src="js/jquery.placeholder.js"></script>
+    <script type="text/javascript">
+    	$('#nameSortList').hide();
+    	$('#priceSwitch').on('switch-change', function (e, data) {
+    	  	var $element = $(data.el);
+    	  	// console.log(e, $element, value);
+    	  	console.log("poop");
+    	  	if($element.parent().hasClass('switch-on')){
+    	  		console.log("poop");
+    	  		$('#priceSortList').show();
+    	  		$('#nameSortList').hide();
+    	  	}
+    	  	else {
+    	  		console.log("no poop");
+    	  		$('#priceSortList').hide();
+    	  		$('#nameSortList').show();
+    	  	}
+    	});
+    </script>
 </body>
 </html>
