@@ -52,7 +52,7 @@
 		<!-- p means paragraph -->
 		<!-- <center><h1>My Cabinet</h1></center> -->
 		<form class="fitWidth" role="search">
-			  <h6>Add ingredients...</h6>
+			  <p>Add ingredients... <a href="/cabinet?delete_all=true" class="btn btn-danger" style="float:right;"><span class="goog_qs-tidbit goog_qs-tidbit-0">Remove All</span></a></p>
 	          <input type="text" id="add_ingredient" class="form-control input-block-level" placeholder="Search Ingredients">
 	        <!-- <button type="submit" class="btn btn-default">Submit</button> -->
       	</form>
@@ -60,6 +60,7 @@
       <!-- <ul class="list-group"> -->
         </br>
         <ul>
+      			{{#if cabinet}}
       			{{#each cabinet}}
       			{{#if this.ingredient}}
       			  <!-- <li class="list-group-item">
@@ -71,7 +72,7 @@
 				    </div>
 				  </li> -->
 				  <div class="alcohol-display">
-				  	<img class="x-button" src="https://cdn1.iconfinder.com/data/icons/perfect-flat-icons-2/512/Close_delete_remove_exit_cross_x_button_error.png">
+				  	<!-- <img class="x-button" src="https://cdn1.iconfinder.com/data/icons/perfect-flat-icons-2/512/Close_delete_remove_exit_cross_x_button_error.png"></a> -->
 				  	<img class="displayImage" src="{{this.image_url}}">
 					<p class="alcohol-name">{{this.ingredient}}</p>
 			      </div>
@@ -88,6 +89,9 @@
 					</div> -->
 				 {{/if}}
 				 {{/each}}
+				 {{else}}
+				 <h1>Your cabinet is empty! Add some drinks.</h1>
+				 {{/if}}
 		<!-- </ul> -->
 		</ul>
 		<br/>
@@ -106,8 +110,8 @@
 	      source: availableTags,
 	      select: function(event, ui) {
             console.log(ui);
-            $("#add_ingredient").val('')
             addIngredient(parseInt(ui.item.id));
+            $("#add_ingredient").val('')            
        		}
 	    });
 	    function addIngredient (ingredient_id) {
@@ -118,6 +122,7 @@
 	        success: function(data) {
 	        	var availableTags = JSON.parse('{{cabinet}}'.replace(/&quot;/g,'"'));
   				console.log(availableTags);
+  				location.reload();
 	        }
 	      });
 	    }

@@ -12,6 +12,12 @@ exports.view = function(req, res){
 		db.cabinets.ensureIndex({"user_id": true, "ingredient_id": true}, {unique: true});
 		db.cabinets.save({user_id: 1, ingredient_id: parseInt(req.query["add_ingredient"])});
 	}
+	if (req.query['delete_all'] == 'true') {
+		db.cabinets.remove({user_id: 1});
+	}
+	// if (req.query['delete_ingredient']) {
+	// 	db.cabinets.remove({user_id: 1, ingredient_id: parseInt(req.query["delete_ingredient"])});
+	// }
 	db.ingredients.find({}, {}, function(err,docs) {
 		if (err) {
 			console.log("error:" + err);
@@ -21,7 +27,7 @@ exports.view = function(req, res){
 			var ingredientMap = {};
 			for (var i = 0; i < docs.length; i++) {
 				ingredients.push({label: docs[i].ingredient, id: docs[i].id});
-				ingredientMap[docs[i].id] = {ingredient: docs[i].ingredient, image_url: docs[i].image_url};
+				ingredientMap[docs[i].id] = {id: docs[i].id, ingredient: docs[i].ingredient, image_url: docs[i].image_url};
 			}
 			db.cabinets.find({user_id: 1}, {}, function (err,docs) {
 				cabinet = [];

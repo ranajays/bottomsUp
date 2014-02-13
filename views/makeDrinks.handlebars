@@ -68,6 +68,7 @@
 		</div> -->
 		</center>
       	<ul class="list-group" id="priceSortList">
+      		{{#if this.price}}
   			{{#each this.price}}
   			{{#if this.drink_name}}
       		<a href="recipe" class="drinks">
@@ -83,8 +84,12 @@
 			</a>
 			{{/if}}
 			{{/each}}
+			{{else}}
+			<h1>No drinks found.</h1>
+			{{/if}}
 		</ul>
 		<ul class="list-group" id="nameSortList">
+      		{{#if this.name}}
   			{{#each this.name}}
   			{{#if this.drink_name}}
       		<a href="recipe" class="drinks">
@@ -100,6 +105,9 @@
 			</a>
 			{{/if}}
 			{{/each}}
+			{{else}}
+			<h1>No drinks found.</h1>
+			{{/if}}
 		</ul>
 		<br/>
 		<br/>
@@ -120,22 +128,26 @@
     <script src="js/jquery.tagsinput.js"></script>
     <script src="js/jquery.placeholder.js"></script>
     <script type="text/javascript">
+    	if (location.search.length == 0) {
+    		$(".btn").first().button("toggle");
+    	}
     	$('#nameSortList').hide();
     	$('#priceSwitch').on('switch-change', function (e, data) {
     	  	var $element = $(data.el);
     	  	// console.log(e, $element, value);
-    	  	console.log("poop");
     	  	if($element.parent().hasClass('switch-on')){
-    	  		console.log("poop");
     	  		$('#priceSortList').show();
     	  		$('#nameSortList').hide();
     	  	}
     	  	else {
-    	  		console.log("no poop");
     	  		$('#priceSortList').hide();
     	  		$('#nameSortList').show();
     	  	}
     	});
+    	$(".btn").click(function () {
+    		$(".btn").removeClass('active');
+    		$(this).button("toggle");
+    	})
     </script>
 </body>
 </html>
