@@ -8,6 +8,11 @@ exports.view = function(req, res){
 	var databaseUrl = "ranajays:ranajays@troup.mongohq.com:10078/app21902449"; // "username:password@example.com/mydb"
 	var collections = ["drinks", "ingredients", "recipes", "cabinets"];
 	var db = require("mongojs").connect(databaseUrl, collections);
+	console.log(req.query);
+	if (req.query['add_ingredient']) {
+		db.cabinets.ensureIndex({"user_id": true, "ingredient_id": true}, {unique: true});
+		db.cabinets.save({user_id: 1, ingredient_id: req.query["add_ingredient"]});
+	}
 	db.ingredients.find({}, {}, function(err,docs) {
 		if (err) {
 			console.log("error:" + err);
@@ -20,43 +25,15 @@ exports.view = function(req, res){
 				ingredientMap[docs[i].id] = {ingredient: docs[i].ingredient, image_url: docs[i].image_url};
 			}
 			db.cabinets.find({user_id: 1}, {}, function (err,docs) {
-				console.log(docs);
 				cabinet = [];
 				for (var i = 0; i < docs.length; i++) {
 					cabinet.push(ingredientMap[docs[i].ingredient_id]);
 				}
+				console.log(cabinet);
 				res.render('cabinet', {
 					cabinet: cabinet,
 					ingredients: JSON.stringify(ingredients)});
 			});
 		}
 	});
-	// var $ = res.window.jQuery;
-	// var availableTags = [
-	// 				      "ActionScript",
-	// 				      "AppleScript",
-	// 				      "Asp",
-	// 				      "BASIC",
-	// 				      "C",
-	// 				      "C++",
-	// 				      "Clojure",
-	// 				      "COBOL",
-	// 				      "ColdFusion",
-	// 				      "Erlang",
-	// 				      "Fortran",
-	// 				      "Groovy",
-	// 				      "Haskell",
-	// 				      "Java",
-	// 				      "JavaScript",
-	// 				      "Lisp",
-	// 				      "Perl",
-	// 				      "PHP",
-	// 				      "Python",
-	// 				      "Ruby",
-	// 				      "Scala",
-	// 				      "Scheme"
-	// 				    ];
- //    $( "#add_ingredient" ).autocomplete({
- //      source: availableTags
- //    });
 };
