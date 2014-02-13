@@ -61,6 +61,19 @@
     display: inline-block;
 }
 
+.drinks {
+    display: block;
+}
+
+.recipeImage {
+    width: 100px;
+    height: 200px;
+    float: left;
+}
+
+.imageIngredients {
+}
+
 #navbar-collapse-01 {
      text-align: center;
 }
