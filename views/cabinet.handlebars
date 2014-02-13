@@ -120,9 +120,9 @@
 	        url: "/cabinet",
 	        data: {add_ingredient: ingredient_id},
 	        success: function(data) {
-	        	var availableTags = JSON.parse('{{cabinet}}'.replace(/&quot;/g,'"'));
-  				console.log(availableTags);
-  				location.reload();
+	        	// location.reload();
+	        	// console.log(window.location.href);
+	        	window.location.href=window.location.href.split('?')[0];
 	        }
 	      });
 	    }
