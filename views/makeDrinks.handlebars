@@ -6,6 +6,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/bootstrap-switch.css" rel="stylesheet">
 	<!-- <link href="/css/bootstrap-theme.min.css" rel="stylesheet"> -->
 	<link href="/css/introHCI.css" rel="stylesheet">
 	<link href="/css/flat-ui.css" rel="stylesheet">
@@ -37,12 +38,22 @@
 
 	<div class="btn-group-wrap">
 			<div class="btn-group" id="custom-navbar">
-				<a class="btn btn-primary" href="#fake">Price</a>
-				<a class="btn btn-primary" href="#fake">+1 ingredients</a>
-				<a class="btn btn-primary" href="#fake">+2 ingredients</a>
-				<a class="btn btn-primary" href="#fake">+3 ingredients</a>
+		<!-- 		<a class="btn btn-primary" href="#fake">Price</a> -->
+				<a class="btn btn-primary btn btn-sm" href="#fake">+1 ingr.</a>
+				<a class="btn btn-primary btn btn-sm" href="#fake">+2 ingr.</a>
+				<a class="btn btn-primary btn btn-sm" href="#fake">+3 ingr.</a>
 			</div>
 	</div>
+
+	<div class="wrapper">
+		<p id="price-title">Price: </p>
+		<div class="switch has-switch" id="priceSwitch">
+			<!-- <div class="switch-animate switch-off"> -->
+			<input type="checkbox" checked data-toggle="switch">
+			<!-- </div> -->
+		</div>
+	</div>
+
 	</br>
 
 	<div class="container fitWidth">

@@ -46,14 +46,14 @@
 }
 
 .displayImage {
-    width: 100px;
-    height: 200px;
+    width: 60px;
+    height: 120px;
 }
 
 .alcohol-display {
     float: left;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
     text-align: center;
 }
 
@@ -115,6 +115,13 @@
     text-align: center;
 }
 
+.wrapper {
+    text-align: center;
+     margin-top: 10px;
+}
+
+
+
 div.btn-group {
     margin: 0 auto; 
     text-align: center;
@@ -124,4 +131,8 @@ div.btn-group {
 
 a {
     float: left;   
+}
+
+#price-title {
+    display: inline;
 }
