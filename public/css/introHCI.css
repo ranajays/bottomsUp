@@ -45,6 +45,22 @@
      min-height: 60px;
 }
 
+.displayImage {
+    width: 100px;
+    height: 200px;
+}
+
+.alcohol-display {
+    float: left;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: center;
+}
+
+.tbr {
+    display: inline-block;
+}
+
 #navbar-collapse-01 {
      text-align: center;
 }
