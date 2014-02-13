@@ -48,7 +48,7 @@ exports.view = function(req, res){
 			  						price += ingredients[(remainders[i]['remainder'])[j]]['price']
 			  						rem_ing.push(ingredients[(remainders[i]['remainder'])[j]]['ingredient']);
 			  					}
-								drinklist.push({drink_id: remainders[i].drink_id, drink_name: drinks[remainders[i].drink_id].drink, image_url: drinks[remainders[i].drink_id].image_url, remainder:rem_ing, price:price.toFixed(2)});
+								drinklist.push({drink_id: remainders[i].drink_id, drink_name: drinks[remainders[i].drink_id].drink, image_url: drinks[remainders[i].drink_id].image_url, remainder:rem_ing, price:(1.5*price).toFixed(2)});
 			  				}
 			  			}
 						console.log(drinklist);
