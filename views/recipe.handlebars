@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{projectName}}</title>
+    <title>bottomsUp: {{data.drink_name}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -40,35 +40,29 @@
       <div> Ingredients </div>
     </li>
     <div> Instructions </div> -->
+    {{#if success}}
     <div class="recipeGrid">
+    <h1>{{data.drink_name}}</h1><br/><br/>
     <ul class="small-block-grid-2">
       <li>
-        <img class="recipeImage" src="http://4.bp.blogspot.com/-lrDcOl7-rWg/TgTBSqz9hBI/AAAAAAAAAUI/JsNFjPf5L4E/s1600/long-island-iced-tea.jpg">
+        <img class="recipeImage" src="{{data.image_url}}">
       </li>
       <li><h5 class="recipeTitle">Ingredients</h5>
         <ul>
-          <li>1 part vodka</li>
-          <li>1 part tequila</li>
-          <li>1 part rum</li>
-          <li>1 part gin</li>
-          <li>1 part triple sec</li>
-          <li>1 1/2 parts sweet and sour mix</li>
-          <li>1 splash Coca-Cola®</li>
+          {{{data.ingredient_list}}}
         </ul>
       </li>
     </ul>
 
     <ul class="small-block-grid-1">
       <li><h5 class="recipeTitle">Instructions</h5></li>
-      <li> Pour the spirits and sour mix into a collins glass with ice.
-            Stir well or shake.
-            Top the glass off with cola.
-            Garnish with the lemon wedge.
-      </li>
+      <li> {{data.instructions}}</li>
 
     </ul>
     </div>
-
+    {{else}}
+    <h1> Not a valid drink! </h1>
+    {{/if}}
     </br>
 
     <a class="fitWidth" href="makeDrinks"><button class="btn btn-block btn btn-info">Back to Make Drinks</button></a>
