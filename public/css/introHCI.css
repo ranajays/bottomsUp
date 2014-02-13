@@ -71,8 +71,11 @@
     float: left;
 }
 
-.imageIngredients {
+.recipeGrid {
+    margin-left: 30px;
+    margin-right: 30px;
 }
+
 
 #navbar-collapse-01 {
      text-align: center;
@@ -104,8 +107,9 @@
      float: right;
 }
 
-
-
+.recipeTitle {
+    font-weight: bold;
+}
 
 .btn-group-wrap {
     text-align: center;
