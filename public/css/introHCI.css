@@ -57,6 +57,10 @@
     text-align: center;
 }
 
+.alcohol-display:hover > .x-button {
+    display: inline;
+}
+
 .tbr {
     display: inline-block;
 }
@@ -69,6 +73,19 @@
     width: 100px;
     height: 200px;
     float: left;
+}
+
+.x-button {
+    width: 15px;
+    height: 15px;
+    position: relative;
+    left: 0;
+    top: 0;
+    display: none;
+}
+
+.x-button:hover {
+    display: inline;
 }
 
 .recipeGrid {
