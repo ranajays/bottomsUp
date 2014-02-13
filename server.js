@@ -44,9 +44,20 @@ app.get('/makeDrinks', makeDrinks.view);
 // Example route
 // app.get('/users', user.list);
 
+
+// mongo = require('./initdb.js');
+
+// mongo.init(function(error) {
+// 	if (error) {
+// 		throw error;
+// 	}
+// });
+
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
+
+
 
 // var file = "databases/current.db";
 // var exists = fs.existsSync(file);
@@ -74,20 +85,3 @@ http.createServer(app).listen(app.get('port'), function(){
 
 // });
 // console.log(db)
-
-var mongodb = require('mongodb');
-var databaseUrl = "mydb"; // "username:password@example.com/mydb"
-var collections = ["drinks", "ingredients", "recipes"];
-var db = require("mongojs").connect(databaseUrl, collections);
-
-db.drinks.find(function(err,docs) {
-	console.log(docs);
-});
-
-db.ingredients.find(function(err,docs) {
-	console.log(docs);
-});
-
-db.recipes.find(function(err,docs) {
-	console.log(docs);
-});

@@ -39,8 +39,10 @@
 }
 
 .listImage {
-     width:40px;
-     height:40px;
+     width:50px;
+     height: auto;
+     max-height: 80px;
+     min-height: 60px;
 }
 
 #navbar-collapse-01 {

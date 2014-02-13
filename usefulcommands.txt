@@ -1,0 +1,1 @@
+vagrant@precise32:~/bottomsUp$ mongoimport -d app21902449 -h troup.mongohq.com:10078 -u ranajays -p ranajays -c recipes --type csv --file databases/recipes.csv --headerline
