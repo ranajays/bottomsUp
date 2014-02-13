@@ -102,8 +102,24 @@
   		var availableTags = JSON.parse('{{ingredients}}'.replace(/&quot;/g,'"'));
   		console.log(availableTags);
 	    $( "#add_ingredient" ).autocomplete({
-	      source: availableTags
+	      source: availableTags,
+	      select: function(event, ui) {
+            console.log(ui);
+            addIngredient(parseInt(ui.item.id));
+       		}
 	    });
+	    function addIngredient (ingredient_id) {
+	      $.ajax({
+	        type: "GET",
+	        url: "/cabinet",
+	        data: {add_ingredient: ingredient_id},
+	        success: function(data) {
+	        	var availableTags = JSON.parse('{{cabinet}}'.replace(/&quot;/g,'"'));
+  				console.log(availableTags);
+	          	$("#add_ingredient").val('')
+	        }
+	      });
+	    }
   	</script>
 </body>
 </html>
