@@ -10,7 +10,7 @@ exports.view = function(req, res){
 	var db = require("mongojs").connect(databaseUrl, collections);
 	if (req.query['add_ingredient']) {
 		db.cabinets.ensureIndex({"user_id": true, "ingredient_id": true}, {unique: true});
-		db.cabinets.save({user_id: 1, ingredient_id: req.query["add_ingredient"]});
+		db.cabinets.save({user_id: 1, ingredient_id: parseInt(req.query["add_ingredient"])});
 	}
 	db.ingredients.find({}, {}, function(err,docs) {
 		if (err) {
