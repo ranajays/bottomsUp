@@ -67,12 +67,12 @@
 			<button class="btn btn-default navbar-btn" type="button">+3 ingredients</button>
 		</div> -->
 		</center>
-      	<ul class="list-group" id="priceSortList">
+      	<div class="list-group" id="priceSortList">
       		{{#if this.price}}
   			{{#each this.price}}
   			{{#if this.drink_name}}
       		<a href="recipe">
-				  <li class="list-group-item"  class="drinks" id="{{this.drink_id}}"}>
+				  <div class="drinks-test" id="{{this.drink_id}}"}>
 				  	<div class="image-wrapper">
 					    <a class="pull-left" href="recipe?id={{this.drink_id}}">
 					      <img class="listImage" src="{{this.image_url}}">
@@ -89,14 +89,14 @@
 					      <img class="arrowRight" src="https://cdn3.iconfinder.com/data/icons/faticons/32/arrow-right-01-512.png">
 					    </a>
 					</div> -->
-				  </li>
+				  </div>
 			</a>
 			{{/if}}	
 			{{/each}}
 			{{else}}
 			<h6>No drinks found.</h6>
 			{{/if}}
-		</ul>
+		</div>
 		<ul class="list-group" id="nameSortList">
       		{{#if this.name}}
   			{{#each this.name}}
