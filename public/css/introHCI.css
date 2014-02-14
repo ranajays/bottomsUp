@@ -41,8 +41,8 @@
 .listImage {
      width:50px;
      height: auto;
-     max-height: 80px;
-     min-height: 60px;
+     max-height: 70px;
+     min-height: 50px;
 }
 
 .arrowRight {
@@ -111,6 +111,11 @@
 
 .media-heading {
     font-weight: bold;
+    font-size: 85%;
+}
+
+.media-text {
+    font-size: 75%;
 }
 
 .arrowRight-wrapper {
@@ -161,7 +166,6 @@
     text-align: center;
      margin-top: 10px;
 }
-
 
 
 div.btn-group {

@@ -79,8 +79,8 @@
 					    </a>
 					</div>
 				    <div class="media-body">
-				      <h6 class="media-heading">{{this.drink_name}} - ${{this.price}}/drink</h6>
-				      <p class="media-text">If you get {{#each this.remainder}} {{this}}, {{/each}} you can make this drink!</p>
+				      <p class="media-heading">{{this.drink_name}} - ${{this.price}}/drink</p>
+				      <span class="media-text">{{#each this.remainder}} + {{this}} {{/each}}</span>
 				    </div>
 				    <!-- <div class="arrowRight-wrapper">
 					    <a href="recipe?id={{this.drink_id}}">
@@ -107,8 +107,8 @@
 					    </a>
 					</div>
 				    <div class="media-body">
-				      <h6 class="media-heading">{{this.drink_name}} - ${{this.price}}/drink</h6>
-				      <p class="media-text">If you get {{#each this.remainder}} {{this}}, {{/each}} you can make this drink!</p>
+				      <p class="media-heading">{{this.drink_name}} - ${{this.price}}/drink</p>
+				      <span class="media-text">If you get {{#each this.remainder}} {{this}}, {{/each}} you can make this drink!</span>
 				    </div>
 				    <!-- <div class="arrowRight-wrapper">
 					    <a href="recipe?id={{this.drink_id}}">
@@ -124,8 +124,8 @@
 			{{/if}}
 		</ul>
 		<br/>
-		<br/>
 		<a class="fitWidth" href="cabinet"><button class="btn btn-block btn btn-info">Back to My Cabinet</button></a>
+		</br>
 		</br>
 	</div>
 
