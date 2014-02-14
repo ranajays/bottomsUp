@@ -71,16 +71,18 @@
       		{{#if this.price}}
   			{{#each this.price}}
   			{{#if this.drink_name}}
-      		<a href="recipe" class="drinks">
-				  <li class="list-group-item">
+      		<a href="recipe">
+				  <li class="list-group-item"  class="drinks" id="{{this.drink_id}}"}>
 				  	<div class="image-wrapper">
 					    <a class="pull-left" href="recipe?id={{this.drink_id}}">
 					      <img class="listImage" src="{{this.image_url}}">
 					    </a>
 					</div>
 				    <div class="media-body">
+				    	<a class="pull-left" href="recipe?id={{this.drink_id}}">
 				      <p class="media-heading">{{this.drink_name}} - ${{this.price}}/drink</p>
 				      <span class="media-text">{{#each this.remainder}} + {{this}} {{/each}}</span>
+				  		</a>
 				    </div>
 				    <!-- <div class="arrowRight-wrapper">
 					    <a href="recipe?id={{this.drink_id}}">
@@ -89,7 +91,7 @@
 					</div> -->
 				  </li>
 			</a>
-			{{/if}}
+			{{/if}}	
 			{{/each}}
 			{{else}}
 			<h6>No drinks found.</h6>
@@ -99,16 +101,19 @@
       		{{#if this.name}}
   			{{#each this.name}}
   			{{#if this.drink_name}}
-      		<a href="recipe" class="drinks">
-				  <li class="list-group-item">
+      		<a href="recipe">
+				  <li class="list-group-item"  class="drinks" id="{{this.drink_id}}">
 				  	<div class="image-wrapper">
 					    <a class="pull-left" href="recipe?id={{this.drink_id}}">
 					      <img class="listImage" src="{{this.image_url}}">
 					    </a>
 					</div>
+					
 				    <div class="media-body">
+				    	<a class="pull-left" href="recipe?id={{this.drink_id}}">
 				      <p class="media-heading">{{this.drink_name}} - ${{this.price}}/drink</p>
 				      <span class="media-text">{{#each this.remainder}} + {{this}} {{/each}}</span>
+						</a>
 				    </div>
 				    <!-- <div class="arrowRight-wrapper">
 					    <a href="recipe?id={{this.drink_id}}">
