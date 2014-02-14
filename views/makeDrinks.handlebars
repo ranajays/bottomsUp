@@ -108,7 +108,7 @@
 					</div>
 				    <div class="media-body">
 				      <p class="media-heading">{{this.drink_name}} - ${{this.price}}/drink</p>
-				      <span class="media-text">If you get {{#each this.remainder}} {{this}}, {{/each}} you can make this drink!</span>
+				      <span class="media-text">{{#each this.remainder}} + {{this}} {{/each}}</span>
 				    </div>
 				    <!-- <div class="arrowRight-wrapper">
 					    <a href="recipe?id={{this.drink_id}}">
@@ -141,6 +141,7 @@
     <script src="js/flatui-radio.js"></script>
     <script src="js/jquery.tagsinput.js"></script>
     <script src="js/jquery.placeholder.js"></script>
+    <script type="js/introHCI.js"></script>
     <script type="text/javascript">
     	if (location.search.length == 0) {
     		$(".btn").first().button("toggle");

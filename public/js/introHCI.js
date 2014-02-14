@@ -45,3 +45,14 @@ $(function(){
         return false;
     });         
 });
+
+// $$('.list-group').each(function(clickable) {
+//     var list = clickable.getElements('li');
+
+//     list.addEvent('click', function() {
+//         var link = this.getElement('a');
+//         if(this.getFirst('a')) {
+//             window.location = link
+//         }
+//     });
+// });

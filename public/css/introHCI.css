@@ -76,11 +76,22 @@
     display: block;
 }
 
+.drinkName {
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 4px solid gray;
+}
+
 .recipeImage {
     width: 100px;
     height: 200px;
     float: left;
 }
+
+/*.list-group-item {
+    cursor: pointer;
+}*/
 
 .x-button {
     width: 15px;
