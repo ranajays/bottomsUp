@@ -52,6 +52,8 @@
 		<!-- p means paragraph -->
 		<!-- <center><h1>My Cabinet</h1></center> -->
 		<form class="fitWidth" role="search">
+				<center><div class="alert alert-success" style="padding: 0px; width: 20%; display: none;">Ingredient Added!</div></center>
+				<center><div class="alert alert-danger" style="padding: 0px; width: 20%; display: none;">Ingredient Deleted!</div></center>
 			  <p>Add ingredients... <a href="/cabinet?delete_all=true" class="btn btn-danger" style="float:right;"><span class="goog_qs-tidbit goog_qs-tidbit-0">Remove All</span></a></p>
 	          <input type="text" id="add_ingredient" class="form-control input-block-level" placeholder="Search Ingredients">
 	        <!-- <button type="submit" class="btn btn-default">Submit</button> -->
@@ -116,20 +118,32 @@
 	      select: function(event, ui) {
             console.log(ui);
             addIngredient(parseInt(ui.item.id));
-            $("#add_ingredient").val('')            
+            $("#add_ingredient").val('');
        		}
 	    });
+	    
+	    if (document.location.href.search("add_ingredient") != -1) {
+	    	$(".alert-success").show();
+			window.setTimeout(function() { $(".alert-success").hide(); }, 2000);
+	    }
+
+	     if (document.location.href.search("delete_ingredient") != -1) {
+	    	$(".alert-danger").show();
+			window.setTimeout(function() { $(".alert-danger").hide(); }, 2000);
+	    }
+	    
 	    function addIngredient (ingredient_id) {
-	      $.ajax({
-	        type: "GET",
-	        url: "/cabinet",
-	        data: {add_ingredient: ingredient_id},
-	        success: function(data) {
-	        	// location.reload();
-	        	// console.log(window.location.href);
-	        	window.location.href=window.location.href.split('?')[0];
-	        }
-	      });
+	    	window.location.href = '/cabinet?add_ingredient='+ingredient_id;
+	      // $.ajax({
+	      //   type: "GET",
+	      //   url: "/cabinet",
+	      //   data: {add_ingredient: ingredient_id},
+	      //   success: function(data) {
+	      //   	// location.reload();
+	      //   	// console.log(window.location.href);
+	      //   	// window.location.href=window.location.href;
+	      //   }
+	      // });
 	    }
   	</script>
 </body>
