@@ -15,9 +15,9 @@ exports.view = function(req, res){
 	if (req.query['delete_all'] == 'true') {
 		db.cabinets.remove({user_id: 1});
 	}
-	// if (req.query['delete_ingredient']) {
-	// 	db.cabinets.remove({user_id: 1, ingredient_id: parseInt(req.query["delete_ingredient"])});
-	// }
+	if (req.query['delete_ingredient']) {
+		db.cabinets.remove({user_id: 1, ingredient_id: parseInt(req.query["delete_ingredient"])});
+	}
 	db.ingredients.find({}, {}, function(err,docs) {
 		if (err) {
 			console.log("error:" + err);
@@ -34,7 +34,7 @@ exports.view = function(req, res){
 				for (var i = 0; i < docs.length; i++) {
 					cabinet.push(ingredientMap[docs[i].ingredient_id]);
 				}
-				console.log(cabinet);
+				// console.log(cabinet);
 				res.render('cabinet', {
 					cabinet: cabinet,
 					ingredients: JSON.stringify(ingredients)});
