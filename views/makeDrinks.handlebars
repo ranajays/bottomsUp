@@ -100,7 +100,7 @@
 			<h6>No drinks found.</h6>
 			{{/if}}
 		</div>
-		<ul class="list-group" id="nameSortList">
+		<ul class="list-group" id="nameSortList" style="display: none;">
       		{{#if this.name}}
   			{{#each this.name}}
   			{{#if this.drink_name}}
@@ -151,6 +151,7 @@
     <script src="js/jquery.placeholder.js"></script>
     <script type="js/introHCI.js"></script>
     <script type="text/javascript">
+    	// $('#nameSortList').hide();
     	if (location.search.length == 0) {
     		$(".btn").first().button("toggle");
     	}
@@ -159,7 +160,6 @@
 			additionalPlus = parseInt(numString)+1;
 			$(".btn:nth-child("+additionalPlus+")").first().button("toggle");
     	}
-    	$('#nameSortList').hide();
     	$('#priceSwitch').on('switch-change', function (e, data) {
     	  	var $element = $(data.el);
     	  	// console.log(e, $element, value);
