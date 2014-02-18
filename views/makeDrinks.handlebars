@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/css/bootstrap-switch.css" rel="stylesheet">
+	<!-- <link href="/css/bootstrap-switch.css" rel="stylesheet"> -->
 	<!-- <link href="/css/bootstrap-theme.min.css" rel="stylesheet"> -->
 	<link href="/css/introHCI.css" rel="stylesheet">
 	<link href="/css/flat-ui.css" rel="stylesheet">
@@ -39,12 +39,14 @@
 	<div class="btn-group-wrap">
 			<div class="btn-group" id="custom-navbar">
 		<!-- 		<a class="btn btn-primary" href="#fake">Price</a> -->
+				<a class="btn btn-primary btn btn-sm" href="/makeDrinks?additional=0">Current</a>
 				<a class="btn btn-primary btn btn-sm" href="/makeDrinks?additional=1">+1 ingr.</a>
 				<a class="btn btn-primary btn btn-sm" href="/makeDrinks?additional=2">+2 ingr.</a>
 				<a class="btn btn-primary btn btn-sm" href="/makeDrinks?additional=3">+3 ingr.</a>
 			</div>
 	</div>
 
+	{{#if this.not_current}}
 	<div class="wrapper">
 		<p id="price-title">Sort Mode </p>
 		<div class="switch has-switch" id="priceSwitch">
@@ -53,6 +55,7 @@
 			<!-- </div> -->
 		</div>
 	</div>
+	{{/if}}
 
 	</br>
 
@@ -72,7 +75,7 @@
   			{{#each this.price}}
   			{{#if this.drink_name}}
       		<a href="recipe">
-				  <div class="drinks-test" id="{{this.drink_id}}"}>
+				  <li class="list-group-item"  class="drinks" id="{{this.drink_id}}">
 				  	<div class="image-wrapper">
 					    <a class="pull-left" href="recipe?id={{this.drink_id}}">
 					      <img class="listImage" src="{{this.image_url}}">
@@ -80,8 +83,8 @@
 					</div>
 				    <div class="media-body">
 				    	<a class="pull-left" href="recipe?id={{this.drink_id}}">
-				      <p class="media-heading">{{this.drink_name}} - ${{this.price}}/drink</p>
-				      <span class="media-text">{{#each this.remainder}} + {{this}} {{/each}}</span>
+				      <p class="media-heading">{{this.drink_name}} {{#if this.remainder}}- ${{this.price}}/drink{{/if}}</p>
+				      <span class="media-text">{{#if this.remainder}}{{#each this.remainder}} + {{this}} {{/each}} {{else}}Ready to make now.{{/if}}</span>
 				  		</a>
 				    </div>
 				    <!-- <div class="arrowRight-wrapper">
@@ -89,7 +92,7 @@
 					      <img class="arrowRight" src="https://cdn3.iconfinder.com/data/icons/faticons/32/arrow-right-01-512.png">
 					    </a>
 					</div> -->
-				  </div>
+				  </li>
 			</a>
 			{{/if}}	
 			{{/each}}
@@ -111,8 +114,8 @@
 					
 				    <div class="media-body">
 				    	<a class="pull-left" href="recipe?id={{this.drink_id}}">
-				      <p class="media-heading">{{this.drink_name}} - ${{this.price}}/drink</p>
-				      <span class="media-text">{{#each this.remainder}} + {{this}} {{/each}}</span>
+				      <p class="media-heading">{{this.drink_name}} {{#if this.remainder}}- ${{this.price}}/drink{{/if}}</p>
+				      <span class="media-text">{{#if this.remainder}}{{#each this.remainder}} + {{this}} {{/each}} {{else}}Ready to make now.{{/if}}</span>
 						</a>
 				    </div>
 				    <!-- <div class="arrowRight-wrapper">
@@ -150,6 +153,11 @@
     <script type="text/javascript">
     	if (location.search.length == 0) {
     		$(".btn").first().button("toggle");
+    	}
+    	else {
+    		numString = location.search.substring(location.search.length - 1);
+			additionalPlus = parseInt(numString)+1;
+			$(".btn:nth-child("+additionalPlus+")").first().button("toggle");
     	}
     	$('#nameSortList').hide();
     	$('#priceSwitch').on('switch-change', function (e, data) {
