@@ -10,8 +10,21 @@ $(document).ready(function() {
  */
 function initializePage() {
 	// add any functionality and listeners you want here
+    $(".alcohol-display").click(ingredientClick);
 }
 
+function ingredientClick(e) {
+    e.preventDefault();
+    // $(this).find(".x-button").css("display", "inline");
+    var button = $(this).find(".x-button");
+    console.log($(this).find(".x-button").css("display"));
+    if ($(this).find(".x-button").css("display") === 'inline') {
+        $(this).find(".x-button").css("display", "none");
+    } else {
+        $(this).find(".x-button").css("display", "inline");
+    }
+}
+ 
 $(function(){           
     var step = 1;
     var current = 0;
