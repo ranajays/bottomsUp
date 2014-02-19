@@ -1,4 +1,13 @@
 /* applies to anything of class "example-class-selector" */
+body.homepage{
+    background-image: url('/images/version4.jpg');
+    background-size: 100%;
+}
+
+.breadcrumb {
+    font-size: 90%;
+}
+
 .example-class-selector {
 	margin-top: 2em;
 }
@@ -44,6 +53,7 @@
      max-height: 70px;
      min-height: 50px;
 }
+
 
 .arrowRight {
     /*float: right;
@@ -215,4 +225,11 @@ a {
 
 #price-title {
     display: inline;
+}
+
+#begin-button {
+    position: fixed;
+    padding: 5px;
+    bottom: 20px;
+    width: 90%;
 }

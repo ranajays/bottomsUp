@@ -23,7 +23,7 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-default" role="navigation">
+	<!-- <nav class="navbar navbar-default" role="navigation">
 			  <div class="navbar-header">
 			    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
 			      <span class="sr-only">Toggle navigation</span>
@@ -35,8 +35,13 @@
 			      <li class="active"><a href="cabinet">My Cabinet</a></li>
 			      <li><a href="makeDrinks">Make Drinks</a></li>
 			    </ul>           
-			  </div><!-- /.navbar-collapse -->
-	</nav><!-- /navbar -->
+			  </div>
+	</nav> -->
+
+	<ol class="breadcrumb">
+		<li><a href="/">BottomsUp</a></li>
+		<li class="active">My Cabinet</li>
+	</ol>
 
 		<!-- <div class="btn-group-wrap">
 			<div class="btn-group" id="custom-navbar">
@@ -52,9 +57,9 @@
 		<!-- p means paragraph -->
 		<!-- <center><h1>My Cabinet</h1></center> -->
 		<form class="fitWidth" role="search">
-				<center><div class="alert alert-success" style="padding: 0px; width: 20%; display: none;">Ingredient Added!</div></center>
-				<center><div class="alert alert-danger" style="padding: 0px; width: 20%; display: none;">Ingredient Deleted!</div></center>
-			  <p>Add ingredients... <a href="/cabinet?delete_all=true" class="btn btn-danger" style="float:right;"><span class="goog_qs-tidbit goog_qs-tidbit-0">Remove All</span></a></p>
+				<center><div class="alert alert-success" style="padding: 0px; width: 60%; display: none; font-size: 60%;">Ingredient Added!</div></center>
+				<center><div class="alert alert-danger" style="padding: 0px; width: 60%; display: none; font-size: 60%;">Ingredient Deleted!</div></center>
+			  <p>Add ingredients you have... <!-- <a href="/cabinet?delete_all=true" class="btn btn-danger" style="float:right;"><span class="goog_qs-tidbit goog_qs-tidbit-0">Remove All</span></a> --></p>
 	          <input type="text" id="add_ingredient" class="form-control input-block-level" placeholder="Search Ingredients">
 	        <!-- <button type="submit" class="btn btn-default">Submit</button> -->
       	</form>
@@ -102,8 +107,14 @@
 		</div>
 		<br/>
 		<br/>
-		<a class="fitWidth" href="makeDrinks"><button class="btn btn-block btn btn-info">Make Drinks</button></a>
-		</br>
+		<div class="makeDrink-button">
+			<a class="fitWidth" href="makeDrinks"><button class="btn btn-block btn btn-info">Drinks you can make w/ what you have</button></a>
+		</div>
+		<!-- <br>&nbsp;<br>
+		<div>
+			<a class="fitWidth" href="/cabinet?delete_all=true"><button class="btn btn-block btn btn-danger"><span class="goog_qs-tidbit goog_qs-tidbit-0">Remove All</span></button></a>
+		</div> -->
+
 	</div>
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>

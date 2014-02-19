@@ -5,11 +5,12 @@
 	<title>bottomsUp: Make Drinks</title>	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
-	<!-- <link href="/css/bootstrap-switch.css" rel="stylesheet"> -->
 	<!-- <link href="/css/bootstrap-theme.min.css" rel="stylesheet"> -->
 	<link href="/css/introHCI.css" rel="stylesheet">
 	<link href="/css/flat-ui.css" rel="stylesheet">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 	<!-- this is a comment in HTML -->
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -21,7 +22,7 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-default" role="navigation">
+	<!-- <nav class="navbar navbar-default" role="navigation">
 			  <div class="navbar-header">
 			    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
 			      <span class="sr-only">Toggle navigation</span>
@@ -33,8 +34,14 @@
 			      <li><a href="cabinet">My Cabinet</a></li>
 			      <li class="active"><a href="makeDrinks">Make Drinks</a></li>
 			    </ul>           
-			  </div><!-- /.navbar-collapse -->
-	</nav><!-- /navbar -->
+			  </div>
+	</nav> -->
+
+	<ol class="breadcrumb">
+		<li><a href="/">BottomsUp</a></li>
+		<!-- <li><a href="cabinet">My Cabinet</a></li> -->
+		<li class="active">Drinks</li>
+	</ol>
 
 	<div class="btn-group-wrap">
 			<div class="btn-group" id="custom-navbar">
@@ -75,7 +82,7 @@
   			{{#each this.price}}
   			{{#if this.drink_name}}
       		<a href="recipe">
-				  <li class="list-group-item"  class="drinks" id="{{this.drink_id}}">
+				  <div class="drinks-test" id="{{this.drink_id}}">
 				  	<div class="image-wrapper">
 					    <a class="pull-left" href="recipe?id={{this.drink_id}}">
 					      <img class="listImage" src="{{this.image_url}}">
@@ -92,7 +99,7 @@
 					      <img class="arrowRight" src="https://cdn3.iconfinder.com/data/icons/faticons/32/arrow-right-01-512.png">
 					    </a>
 					</div> -->
-				  </li>
+				  </div>
 			</a>
 			{{/if}}	
 			{{/each}}
@@ -105,7 +112,7 @@
   			{{#each this.name}}
   			{{#if this.drink_name}}
       		<a href="recipe">
-				  <li class="list-group-item"  class="drinks" id="{{this.drink_id}}">
+				  <div class="drinks-test" id="{{this.drink_id}}">
 				  	<div class="image-wrapper">
 					    <a class="pull-left" href="recipe?id={{this.drink_id}}">
 					      <img class="listImage" src="{{this.image_url}}">
@@ -123,7 +130,7 @@
 					      <img class="arrowRight" src="https://cdn3.iconfinder.com/data/icons/faticons/32/arrow-right-01-512.png">
 					    </a>
 					</div> -->
-				  </li>
+				  </div>
 			</a>
 			{{/if}}
 			{{/each}}
