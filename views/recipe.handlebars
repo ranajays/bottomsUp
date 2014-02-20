@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <!-- <link href="/css/bootstrap-theme.min.css" rel="stylesheet"> -->
+    <!-- <link href="/css/bootstrap-theme.css" rel="stylesheet"> -->
     <link href="/css/introHCI.css" rel="stylesheet">
     <link href="/css/flat-ui.css" rel="stylesheet">
-    <link href="/css/foundation.css" rel="stylesheet">
+    <!-- <link href="/css/foundation.css" rel="stylesheet"> -->
+
+<meta charset="utf-8">
+  <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -19,7 +24,7 @@
   </head>
   <body>
 	<!-- this is a comment in HTML -->
-    <nav class="navbar navbar-default" role="navigation">
+    <!-- <nav class="navbar navbar-default" role="navigation">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
               <span class="sr-only">Toggle navigation</span>
@@ -31,9 +36,14 @@
               <li><a href="cabinet">My Cabinet</a></li>
               <li class="active"><a href="makeDrinks">Make Drinks</a></li>
             </ul>           
-          </div><!-- /.navbar-collapse -->
-    </nav><!-- /navbar -->
-    </br>
+          </div>
+    </nav>
+    </br> -->
+
+    <ol class="breadcrumb">
+      <li><a href="/">BottomsUp</a></li>
+      <li class="active">Recipe</li>
+    </ol>
 
     <!-- <li class="imageIngredients">
       <img class="recipeImage" src="http://4.bp.blogspot.com/-lrDcOl7-rWg/TgTBSqz9hBI/AAAAAAAAAUI/JsNFjPf5L4E/s1600/long-island-iced-tea.jpg">
@@ -42,23 +52,45 @@
     <div> Instructions </div> -->
     {{#if success}}
     <div class="recipeGrid">
-    <h5 class="drinkName">{{data.drink_name}}</h5><br/><br/>
-    <ul class="small-block-grid-2">
-      <li>
-        <img class="recipeImage" src="{{data.image_url}}">
-      </li>
-      <li><h5 class="recipeTitle">Ingredients</h5>
-        <ul>
-          {{{data.ingredient_list}}}
-        </ul>
-      </li>
-    </ul>
+      <h6 class="drinkName">{{data.drink_name}}</h6>
+      <!-- <ul class="small-block-grid-2">
+        <li>
+          <img class="recipeImage" src="{{data.image_url}}">
+        </li>
+        <li><h5 class="recipeTitle">Ingredients</h5>
+          <ul>
+            {{{data.ingredient_list}}}
+          </ul>
+        </li>
+      </ul> -->
 
-    <ul class="small-block-grid-1">
-      <li><h5 class="recipeTitle">Instructions</h5></li>
-      <li> {{data.instructions}}</li>
+      <div class="row ingredient-block">
+        <div>
+          <img class="recipeImage" src="{{data.image_url}}">
+        </div>
+        <div  class="ingredient-list">
+          <p class="recipeTitle">Ingredients</p>
+          <p>
+            <ul class="recipe-ingredients">
+              {{{data.ingredient_list}}}
+            </ul>
+          </p>
+        </div>
+      </div>
 
-    </ul>
+
+      <!-- <ul class="small-block-grid-1">
+        <li><p class="recipeTitle">Instructions</p></li>
+        <li> {{data.instructions}}</li>
+      </ul> -->
+      <br />
+      <div class="row">
+        <div class="span12 instruction-block">
+          <p class="recipeTitle">Instructions</p>
+          <p class="drink-instructions"> {{data.instructions}} </p>
+        </div>
+      </div>
+
     </div>
     {{else}}
     <h1> Not a valid drink! </h1>

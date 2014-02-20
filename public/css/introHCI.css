@@ -1,6 +1,6 @@
 /* applies to anything of class "example-class-selector" */
 body.homepage{
-    background-image: url('/images/version4.jpg');
+    background-image: url('/images/version5.jpg');
     background-size: 100%;
 }
 
@@ -8,6 +8,9 @@ body.homepage{
     font-size: 90%;
 }
 
+.buttonHolder {
+    text-align: center;
+}
 .example-class-selector {
 	margin-top: 2em;
 }
@@ -110,6 +113,7 @@ body.homepage{
     font-weight: bold;
     text-decoration: none;
     border-bottom: 4px solid gray;
+    font-size: 100%;
 }
 
 .recipeImage {
@@ -117,6 +121,32 @@ body.homepage{
     height: 200px;
     float: left;
 }
+
+.recipe-ingredients {
+    font-size: 90%;
+}
+
+.drink-instructions {
+    font-size: 90%;
+}
+
+.instruction-block {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.ingredient-block {
+    padding-left: 20px;
+    padding-right: 20px;
+    display: block;
+}
+
+.ingredient-list {
+    width: 130px;
+    height: auto;
+    float: right;
+}
+
 
 /*.list-group-item {
     cursor: pointer;
@@ -228,8 +258,13 @@ a {
 }
 
 #begin-button {
-    position: fixed;
-    padding: 5px;
-    bottom: 20px;
-    width: 90%;
+    position: relative;
+   /* padding: 5px;
+    bottom: 20px;*/
+    margin-top: 105%;
+    opacity: 0.7;
+}
+
+#cabinet-button {
+    color: white;
 }

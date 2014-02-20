@@ -970,7 +970,7 @@ meta.foundation-mq-topbar {
   width: 40.063em; }
 
 /* Wrapped around .top-bar to contain to grid width */
-.contain-to-grid {
+/*.contain-to-grid {
   width: 100%;
   background: #333333; }
   .contain-to-grid .top-bar {
@@ -1442,7 +1442,7 @@ meta.foundation-mq-topbar {
     margin-left: 1.375rem;
     display: block; }
     .inline-list > li > * {
-      display: block; }
+      display: block; }*/
 
 button, .button {
   border-style: solid;
@@ -2611,8 +2611,8 @@ dl,
 dt,
 dd,
 ul,
-ol,
-li,
+/*ol,
+li,*/
 h1,
 h2,
 h3,
@@ -2722,7 +2722,7 @@ code {
   color: #bd260d; }
 
 /* Lists */
-ul,
+/*ul,
 ol,
 dl {
   font-size: 1rem;
@@ -2739,10 +2739,10 @@ ul {
     ul.no-bullet li ol {
       margin-left: 1.25rem;
       margin-bottom: 0;
-      list-style: none; }
+      list-style: none; }*/
 
 /* Unordered Lists */
-ul li ul,
+/*ul li ul,
 ul li ol {
   margin-left: 1.25rem;
   margin-bottom: 0; }
@@ -2760,13 +2760,13 @@ ul.disc {
 ul.no-bullet {
   list-style: none; }
 
-/* Ordered Lists */
+ Ordered Lists 
 ol {
   margin-left: 1.4rem; }
   ol li ul,
   ol li ol {
     margin-left: 1.25rem;
-    margin-bottom: 0; }
+    margin-bottom: 0; }*/
 
 /* Definition Lists */
 dl dt {
