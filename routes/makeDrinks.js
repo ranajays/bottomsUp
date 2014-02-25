@@ -8,7 +8,7 @@ exports.view = function(req, res){
 	var databaseUrl = "ranajays:ranajays@ds033679.mongolab.com:33679/heroku_app21902449"; // "username:password@example.com/mydb"
 	var collections = ["drinks", "ingredients", "recipes", "cabinets"];
 	var db = require("mongojs").connect(databaseUrl, collections);
-	db.cabinets.find({user_id: 1}, {}, function (err,docs) {
+	db.cabinets.find({user_id: req.ip}, {}, function (err,docs) {
 		var additional = 0;
 		if (req.query['additional']) {
 			additional = parseInt(req.query['additional']);
