@@ -5,7 +5,7 @@
 
 exports.view = function(req, res){
 	var mongodb = require('mongodb');
-	var databaseUrl = "ranajays:ranajays@troup.mongohq.com:10078/app21902449"; // "username:password@example.com/mydb"
+	var databaseUrl = "ranajays:ranajays@ds033679.mongolab.com:33679/heroku_app21902449"; // "username:password@example.com/mydb"
 	var collections = ["drinks", "ingredients", "recipes", "cabinets"];
 	var db = require("mongojs").connect(databaseUrl, collections);
 	db.cabinets.find({user_id: 1}, {}, function (err,docs) {
@@ -81,6 +81,7 @@ function getDrinkDetails (additional, remainders, db, res) {
 			}
 		// console.log(drinklist);
 			res.render('makeDrinks', {price: drinklist.sort(dynamicSort("price")), name:drinklist.slice(0).sort(dynamicSort("drink_name")), not_current: (additional>0)});
+			db.close();
 		});
 	});
 }

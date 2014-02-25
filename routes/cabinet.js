@@ -5,7 +5,7 @@
 
 exports.view = function(req, res){
 	var mongodb = require('mongodb');
-	var databaseUrl = "ranajays:ranajays@troup.mongohq.com:10078/app21902449"; // "username:password@example.com/mydb"
+	var databaseUrl = "ranajays:ranajays@ds033679.mongolab.com:33679/heroku_app21902449"; // "username:password@example.com/mydb"
 	var collections = ["drinks", "ingredients", "recipes", "cabinets"];
 	var db = require("mongojs").connect(databaseUrl, collections);
 	if (req.query['add_ingredient']) {
@@ -38,6 +38,7 @@ exports.view = function(req, res){
 				res.render('cabinet', {
 					cabinet: cabinet,
 					ingredients: JSON.stringify(ingredients)});
+				db.close();
 			});
 		}
 	});
