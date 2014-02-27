@@ -1,7 +1,8 @@
 /* applies to anything of class "example-class-selector" */
 body.homepage{
-    background-image: url('/images/version5.jpg');
-    background-size: 100%;
+    background-image: url('/images/version8.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 
 .breadcrumb {
@@ -162,7 +163,7 @@ body.homepage{
     position: relative;
     left: 0;
     top: 0;
-    display: none;
+    /*display: none;*/
 }
 
 /*.x-button:hover {

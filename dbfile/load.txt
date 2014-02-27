@@ -1,0 +1,4 @@
+.separator ,
+.import drink.csv Drinks
+.import ingredients.csv Ingredients
+.import recipes.csv Recipe
