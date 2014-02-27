@@ -1,6 +1,6 @@
 exports.viewRecipe = function(req, res) {
 	var mongodb = require('mongodb');
-	var databaseUrl = "ranajays:ranajays@troup.mongohq.com:10078/app21902449"; // "username:password@example.com/mydb"
+	var databaseUrl = "ranajays:ranajays@ds033679.mongolab.com:33679/heroku_app21902449"; // "username:password@example.com/mydb"
 	var collections = ["drinks", "ingredients", "recipes", "cabinets"];
 	var db = require("mongojs").connect(databaseUrl, collections);
 	var drink_id = 0;
@@ -22,6 +22,7 @@ exports.viewRecipe = function(req, res) {
 				ingredient_list += "<li>"+ingredients[i]+"</li>\n";
 			}
 			res.render('recipe', {success: true, data: {drink_name: docs[0].drink, image_url: docs[0].image_url, ingredient_list: ingredient_list, instructions: docs[0].instructions}});
+			db.close();
 		}
 	});
 };
