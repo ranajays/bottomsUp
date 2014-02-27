@@ -60,7 +60,7 @@
 				<center><div class="alert alert-success" style="padding: 0px; width: 60%; display: none; font-size: 60%;">Ingredient Added!</div></center>
 				<center><div class="alert alert-danger" style="padding: 0px; width: 60%; display: none; font-size: 60%;">Ingredient Deleted!</div></center>
 			  <p>Add ingredients you have... <!-- <a href="/cabinet?delete_all=true" class="btn btn-danger" style="float:right;"><span class="goog_qs-tidbit goog_qs-tidbit-0">Remove All</span></a> --></p>
-	          <input type="text" id="add_ingredient" class="form-control input-block-level" placeholder="Search Ingredients">
+	          <input type="text" id="add_ingredient" class="form-control input-block-level" placeholder="e.g. rum">
 	        <!-- <button type="submit" class="btn btn-default">Submit</button> -->
       	</form>
 
@@ -80,11 +80,14 @@
 				    </div>
 				  </li> -->
 				  <div class="alcohol-display">
-				  	<a href="/cabinet?delete_ingredient={{this.id}}">
-				  		<img class="x-button" src="https://cdn1.iconfinder.com/data/icons/perfect-flat-icons-2/512/Close_delete_remove_exit_cross_x_button_error.png">
-				  	</a>
-				  	<img class="displayImage" src="{{this.image_url}}">
-					<p class="alcohol-name">{{this.ingredient}}</p>
+				  	<div class="alcohol-image-display">
+				  		<!-- <img class="displayImage" src="{{this.image_url}}"> -->
+					  	<a href="/cabinet?delete_ingredient={{this.id}}">
+					  		<img class="x-button" src="https://cdn1.iconfinder.com/data/icons/perfect-flat-icons-2/512/Close_delete_remove_exit_cross_x_button_error.png">
+					  	</a>
+					  	<img class="displayImage" src="{{this.image_url}}">
+						<p class="alcohol-name">{{this.ingredient}}</p>
+					</div>
 			      </div>
 
 				 <!--  <div class="row">
@@ -100,7 +103,7 @@
 				 {{/if}}
 				 {{/each}}
 				 {{else}}
-				 <h6>Your cabinet is empty! Add some ingredients.</h6>
+				 <p>Your cabinet is empty! Add some ingredients.</p>
 				 {{/if}}
 		<!-- </ul> -->
 		</ul>
