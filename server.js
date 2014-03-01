@@ -41,6 +41,7 @@ if ('development' == app.get('env')) {
 // Add routes here
 app.get('/', index.view);
 app.get('/cabinet', cabinet.view);
+app.get('/cabinet2', cabinet.view2);
 app.get('/makeDrinks', makeDrinks.view);
 app.get('/recipe', recipe.viewRecipe);
 // Example route
