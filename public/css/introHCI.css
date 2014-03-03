@@ -166,6 +166,15 @@ body.homepage{
     display: none;
 }
 
+.x-button2 {
+    width: 15px;
+    height: 15px;
+    position: relative;
+    left: 0;
+    top: 0;
+    display: none;
+}
+
 /*.x-button:hover {
     display: inline;
 }*/
