@@ -68,58 +68,46 @@
         </br>
         <div class="ingredients-section">
         <ul>
+        	{{#if cabinet.hasText}}
       			{{#if cabinet}}
       			{{#each cabinet}}
       			{{#if this.ingredient}}
-      			  <!-- <li class="list-group-item">
-				    <a class="pull-left" href="#">
-				      <img class="listImage" src="{{this.image_url}}">
-				    </a>
-				    <div class="media-body">
-				      <h1 class="media-heading">{{this.ingredient}}</h1>
-				    </div>
-				  </li> -->
-				  {{#if hasText}}
-				   	  <center><p>(Tap ingredient to delete individually)</p></center>
-					  <div class="alcohol-display">
-					  	<div class="alcohol-image-display">
-					  		<!-- <img class="displayImage" src="{{this.image_url}}"> -->
-						  	<a href="/cabinet?delete_ingredient={{this.id}}">
-						  		<img class="x-button2" src="https://cdn1.iconfinder.com/data/icons/perfect-flat-icons-2/512/Close_delete_remove_exit_cross_x_button_error.png">
-						  	</a>
-						  	<img class="displayImage" src="{{this.image_url}}">
-							<p class="alcohol-name">{{this.ingredient}}</p>
-						</div>
-				      </div>
-
-				  {{else}}
-					  <div class="alcohol-display">
-					  	<div class="alcohol-image-display">
-					  		<!-- <img class="displayImage" src="{{this.image_url}}"> -->
-						  	<a href="/cabinet?delete_ingredient={{this.id}}">
-						  		<img class="x-button" src="https://cdn1.iconfinder.com/data/icons/perfect-flat-icons-2/512/Close_delete_remove_exit_cross_x_button_error.png">
-						  	</a>
-						  	<img class="displayImage" src="{{this.image_url}}">
-							<p class="alcohol-name">{{this.ingredient}}</p>
-						</div>
-				      </div>
-			      {{/if}}
-
-				 <!--  <div class="row">
-					  <div class="col-sm-6 col-md-4">
-					    <div class="thumbnail">
-					      <img class="displayImage" src="{{this.image_url}}">
-					      <div class="caption">
-					        <h3>{{this.ingredient}}</h3>
-					      </div>
-					    </div>
-					  </div>
-					</div> -->
+			   	  <center><p>(Tap ingredient to delete individually)</p></center>
+				  <div class="alcohol-display">
+				  	<div class="alcohol-image-display">
+				  		<!-- <img class="displayImage" src="{{this.image_url}}"> -->
+					  	<a href="/cabinet?delete_ingredient={{this.id}}">
+					  		<img class="x-button" src="https://cdn1.iconfinder.com/data/icons/perfect-flat-icons-2/512/Close_delete_remove_exit_cross_x_button_error.png">
+					  	</a>
+					  	<img class="displayImage" src="{{this.image_url}}">
+						<p class="alcohol-name">{{this.ingredient}}</p>
+					</div>
+			      </div>
 				 {{/if}}
 				 {{/each}}
 				 {{else}}
 				 <p>Your cabinet is empty! Add some ingredients.</p>
 				 {{/if}}
+			{{else}}
+				{{#if cabinet}}
+      			{{#each cabinet}}
+      			{{#if this.ingredient}}
+				  <div class="alcohol-display">
+				  	<div class="alcohol-image-display">
+				  		<!-- <img class="displayImage" src="{{this.image_url}}"> -->
+					  	<a href="/cabinet?delete_ingredient={{this.id}}">
+					  		<img class="x-button2" src="https://cdn1.iconfinder.com/data/icons/perfect-flat-icons-2/512/Close_delete_remove_exit_cross_x_button_error.png">
+					  	</a>
+					  	<img class="displayImage" src="{{this.image_url}}">
+						<p class="alcohol-name">{{this.ingredient}}</p>
+					</div>
+			      </div>
+				 {{/if}}
+				 {{/each}}
+				 {{else}}
+				 <p>Your cabinet is empty! Add some ingredients.</p>
+				 {{/if}}
+			{{/if}}
 		<!-- </ul> -->
 		</ul>
 		</div>
