@@ -118,7 +118,7 @@
 		<br/>
 		<br/>
 		<div class="makeDrink-button">
-			<a class="fitWidth" href="makeDrinks"><button class="btn btn-block btn btn-info">Drinks you can make</button></a>
+			<a class="fitWidth"><button class="btn btn-block btn btn-info">Drinks you can make</button></a>
 		</div>
 		<!-- <hr></hr> -->
 		<!-- <div class="removeAll-button">
@@ -142,6 +142,13 @@
             $("#add_ingredient").val('');
        		}
 	    });
+
+	    $('.makeDrink-button').click(function(){
+	    	ga('send', "event", "makeDrinks", "click");
+	    	window.setTimeout(function() {
+	        	window.location.href="makeDrinks";
+	    	}, 100);
+	    })
 	    
 	    if (document.location.href.search("add_ingredient") != -1) {
 	    	$(".alert-success").show();
@@ -178,7 +185,7 @@
 	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-	  ga('create', 'UA-48461632-2', { 'cookieDomain': 'none' });
+	  ga('create', 'UA-48461632-2', "bottomsupapp.herokuapp.com");
 	  ga('send', 'pageview');
 
 	</script>
