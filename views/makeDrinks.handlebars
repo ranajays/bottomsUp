@@ -111,8 +111,8 @@
 			{{/if}}
 		</div>
 		<ul class="list-group" id="nameSortList" style="display: none;">
-      		{{#if this.name}}
-  			{{#each this.name}}
+      		{{#if this.popularity}}
+  			{{#each this.popularity}}
   			{{#if this.drink_name}}
       		<a href="recipe">
 				  <div class="drinks-test" id="{{this.drink_id}}">
@@ -124,7 +124,7 @@
 					
 				    <div class="media-body">
 				    	<a class="pull-left" href="recipe?id={{this.drink_id}}">
-				      <p class="media-heading">{{this.drink_name}} {{#if this.remainder}}- ${{this.price}}/drink{{/if}}</p>
+				      <p class="media-heading">{{this.drink_name}} {{#if this.remainder}}- {{this.popularity}} votes{{/if}}</p>
 				      <span class="media-text">{{#if this.remainder}}{{#each this.remainder}} + {{this}} {{/each}} {{else}}Ready to make now.{{/if}}</span>
 						</a>
 				    </div>

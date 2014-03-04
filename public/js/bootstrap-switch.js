@@ -23,7 +23,7 @@
               , color
               , moving
               , onLabel = "Price"
-              , offLabel = "Name"
+              , offLabel = "Popularity"
               , icon = false;
 
             $.each(['switch-mini', 'switch-small', 'switch-large'], function (i, el) {
