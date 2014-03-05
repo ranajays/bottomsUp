@@ -1,8 +1,14 @@
 /* applies to anything of class "example-class-selector" */
 body.homepage{
-    background-image: url('/images/version9.jpg');
-    background-size: 100% auto;
-    background-repeat: no-repeat;
+    background: url('/images/version9.jpg') no-repeat center center fixed;
+
+    -moz-background-size: cover;
+
+    -webkit-background-size: cover;
+
+    -o-background-size: cover;
+
+    background-size: cover;
 }
 
 .breadcrumb {
