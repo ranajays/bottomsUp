@@ -1,7 +1,7 @@
 /* applies to anything of class "example-class-selector" */
 body.homepage{
-    background-image: url('/images/version8.jpg');
-    background-size: 100% 100%;
+    background-image: url('/images/version9.jpg');
+    background-size: 100% auto;
     background-repeat: no-repeat;
 }
 
